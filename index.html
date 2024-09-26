@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Cores</title>
+    <link rel="stylesheet" href="style.css"> <!-- Adicione esta linha se o CSS estiver em um arquivo separado -->
+</head>
+<body>  
+    <h1>Conversor de Cores</h1>
+    <div class="container">
+        <!-- Box RGB -->
+        <div class="color-box">
+            <h2>RGB</h2>
+            <!-- <label for="rInput">R</label> -->
+            <h6>Red (Vermelho)</h6>
+            <input id="rInput" type="number" min="0" max="255">
+            <input id="rSlider" type="range" min="0" max="255">
+            
+            <!-- <label for="gInput">G</label> -->
+            <h6>Green (Verde)</h6>
+            <input id="gInput" type="number" min="0" max="255">
+            <input id="gSlider" type="range" min="0" max="255">
+            
+            <!-- <label for="bInput">B</label> -->
+            <h6>Blue (Azul)</h6>
+            <input id="bInput" type="number" min="0" max="255">
+            <input id="bSlider" type="range" min="0" max="255">
+        </div>
+        
+        <!-- Box CMYK -->
+        <div class="color-box">
+            <h2>CMYK</h2>
+            <!-- <label for="cInput">C</label> -->
+            <h6>Cyan (Ciano)</h6>
+            <input id="cInput" type="number" min="0" max="100">
+            <input id="cSlider" type="range" min="0" max="100">
+            
+            <!-- <label for="mInput">M</label> -->
+            <h6>Magenta (Magenta)</h6>
+            <input id="mInput" type="number" min="0" max="100">
+            <input id="mSlider" type="range" min="0" max="100">
+            
+            <!-- <label for="yInput">Y</label> -->
+            <h6>Yellow (Amarelo)</h6>
+            <input id="yInput" type="number" min="0" max="100">
+            <input id="ySlider" type="range" min="0" max="100">
+            
+            <!-- <label for="kInput">K</label> -->
+            <h6>Key (Preto)</h6>
+            <input id="kInput" type="number" min="0" max="100">
+            <input id="kSlider" type="range" min="0" max="100">
+        </div>
+        
+        <!-- Box HSL -->
+        <div class="color-box">
+            <h2>HSL</h2>
+            <!-- <label for="hInput">H</label> -->
+            <h6>Hue (Matiz)</h6>
+            <input id="hInput" type="number" min="0" max="360">
+            <input id="hSlider" type="range" min="0" max="360">
+            
+            <!-- <label for="sInput">S</label> -->
+            <h6>Saturation (Saturação)</h6>
+            <input id="sInput" type="number" min="0" max="100">
+            <input id="sSlider" type="range" min="0" max="100">
+            
+            <!-- <label for="lInput">L</label> -->
+            <h6>Lightness (Luminosidade)</h6>
+            <input id="lInput" type="number" min="0" max="100">
+            <input id="lSlider" type="range" min="0" max="100">
+        </div>
+        
+        <!-- Box HSV -->
+        <div class="color-box">
+            <h2>HSV</h2>
+            <!-- <label for="hsvHInput">H</label> -->
+            <h6>Hue (Matiz)</h6>
+            <input id="hsvHInput" type="number" min="0" max="360">
+            <input id="hsvHSlider" type="range" min="0" max="360">
+            
+            <!-- <label for="hsvSInput">S</label> -->
+            <h6>Saturation (Saturação)</h6>
+            <input id="hsvSInput" type="number" min="0" max="100">
+            <input id="hsvSSlider" type="range" min="0" max="100">
+            
+            <!-- <label for="hsvVInput">V</label> -->
+            <h6>Value (Valor)</h6>
+            <input id="hsvVInput" type="number" min="0" max="100">
+            <input id="hsvVSlider" type="range" min="0" max="100">
+        </div>
+    
+        <!-- Central box for HEX and color picker -->
+        <div class="color-box">
+            <h2>Cor Final - Selecionada</h2>
+            <div class="hex-color-picker-columns">
+                <!-- Primeira caixa: Número Hexadecimal -->
+                <div class="hex-box">
+                    <label for="hexInput">Hexadecimal</label>
+                    <input id="hexInput" type="text" value="#930b0b" maxlength="7">
+                </div>
+    
+                <!-- Segunda caixa: Color Display e Color Picker -->
+                <div class="color-box-inner">
+                    <!-- <label>Cor Selecionada</label> -->
+                    <div id="colorDisplay" style="background-color: #930b0b;"></div>
+                    <!-- <input id="colorPicker" type="color" value="#930b0b"> -->
+                </div>
+
+                <div class="hex-box">
+                    <label>Paleta de Cores</label>
+                    <input id="colorPicker" type="color" value="#930b0b">
+                </div>
+            </div>
+        </div>
+    </div>
+    <button id="generatePdfButton">Gerar Relatório</button>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>  
+    <script src="script.js"></script>
+</body>
+</html>

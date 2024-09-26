@@ -1,0 +1,235 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    flex-direction: column; 
+    transition: background 0.5s ease; /* Transição suave */
+    background: linear-gradient(135deg, #e66465, #9198e5); /* Gradiente estático */
+
+}
+
+h1 {
+    font-size: 60px;  /* Tamanho maior para mais destaque */
+    text-align: center;  /* Centralizado */
+    color: #333;  /* Cor escura */
+    font-family: 'Arial', sans-serif;  /* Fonte legível */
+    margin-bottom: 30px;  /* Espaçamento abaixo do título */
+    font-weight: bold;  /* Título em negrito */
+    letter-spacing: 1px;  /* Mais espaçamento entre as letras */
+    /* text-transform: uppercase;  Título em maiúsculas */
+    background: linear-gradient(180deg, #ffffff, #ffffff);  /* Degradê de cor no texto */
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);  
+    -webkit-background-clip: text;  /* Faz o background aplicar ao texto */
+    color: transparent;  /* Define o texto como transparente para exibir o degradê */
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.85); /* Fundo semi-transparente para contraste */
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 1000px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.color-box {
+    background-color: #e9ecef;
+    border-radius: 8px;
+    padding: 20px;
+    flex: 1;
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.color-box h2 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="number"] {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Estilo dos sliders */
+input[type="range"] {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 8px;
+    border-radius: 5px;
+    background: linear-gradient(to right, #007bff, #28a745, #dc3545);
+    outline: none;
+    opacity: 0.9;
+    transition: opacity 0.2s ease;
+}
+
+input[type="range"]:hover {
+    opacity: 1;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #ffffff;
+    border: 2px solid #007bff;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+input[type="range"]:hover::-webkit-slider-thumb {
+    background-color: #007bff;
+    transform: scale(1.2);
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #ffffff;
+    border: 2px solid #007bff;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.hex-color-picker-columns {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    width: 80%;
+}
+
+.hex-box,
+.color-box-inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.hex-box {
+    width: 300px;
+}
+
+.color-box-inner {
+    width: 550px;
+}
+
+#colorDisplay {
+    width: 140px;
+    height: 140px;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    margin: 10px 0;
+}
+
+input#colorPicker {
+    width: 100px;
+    height: 40px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 2px solid #ccc;
+}
+
+/* Estilizando o campo Hexadecimal */
+input#hexInput {
+    width: 100px;
+    padding: 8px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    margin-top: 10px;
+    background-color: #f9f9f9;
+    text-align: center;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+input[type="number"] {
+    width: 70px;
+    margin-bottom: 5px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .container {
+        display: block;
+        padding: 15px;
+    }
+
+    .color-box {
+        margin-bottom: 15px;
+        width: 100%;
+    }
+
+    .hex-color-picker-columns {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+h6{
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+
+button {
+    margin-top: 20px;
+    background: linear-gradient(90deg, #e56466, #9298e3);  /* Gradiente de azul para verde */
+    border: 0.1px solid #cccccc;
+    border-radius: 30px;  /* Deixa o botão com bordas arredondadas */
+    color: white;  /* Cor do texto branco */
+    padding: 15px 30px;  /* Espaçamento interno (15px vertical e 30px horizontal) */
+    font-size: 16px;  /* Tamanho da fonte */
+    font-weight: bold;  /* Deixa o texto em negrito */
+    text-transform: uppercase;  /* Deixa o texto todo em maiúsculas */
+    letter-spacing: 1px;  /* Aumenta o espaçamento entre as letras */
+    cursor: pointer;  /* Adiciona o ícone de cursor pointer para indicar clicável */
+    transition: all 0.3s ease;  /* Adiciona uma transição suave para o hover */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);  /* Sombra suave abaixo do botão */
+    outline: none;  /* Remove o outline padrão ao clicar */
+}
+
+button:hover {
+    background: linear-gradient(90deg, #9298e3, #e56466);  /* Inverte o gradiente no hover */
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);  /* Aumenta a sombra no hover */
+    transform: translateY(-3px);  /* Eleva o botão levemente para cima no hover */
+}
+
+button:active {
+    transform: translateY(1px);  /* Empurra o botão levemente para baixo quando clicado */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);  /* Reduz a sombra quando o botão é clicado */
+}
