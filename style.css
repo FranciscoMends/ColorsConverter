@@ -69,7 +69,7 @@ input[type="number"] {
     width: 100%;
     padding: 5px;
     border: 1px solid #ccc;
-    border-radius:10px;
+    border-radius: 10px;
 }
 
 /* Estilo dos sliders */
@@ -78,7 +78,7 @@ input[type="range"] {
     width: 100%;
     height: 8px;
     border-radius: 5px;
-    background: linear-gradient(to right, #007bff, #28a745, #dc3545);
+    background: linear-gradient(to right, #e56466, #9298e3);
     outline: none;
     opacity: 0.9;
     transition: opacity 0.2s ease;
@@ -95,13 +95,13 @@ input[type="range"]::-webkit-slider-thumb {
     height: 20px;
     border-radius: 50%;
     background: #ffffff;
-    border: 2px solid #007bff;
+    border: 1px solid #ccc;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 input[type="range"]:hover::-webkit-slider-thumb {
-    background-color: #007bff;
+    background-color: #ccc;
     transform: scale(1.2);
 }
 
